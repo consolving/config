@@ -75,6 +75,19 @@ func (c *Config) Check() bool {
 	return true
 }
 
+// Remove - removes a key from the config setting
+func (c *Config) Remove(key string) {
+	c.readConfig()
+	delete(c.configuration, key)
+}
+
+// Has - checks if a config setting is present
+func (c *Config) Has(key string) bool {
+	c.readConfig()
+	_, present := c.configuration[key]
+	return present
+}
+
 // Get - read a config setting
 func (c *Config) Get(key string) string {
 	c.readConfig()
