@@ -1,3 +1,3 @@
-module git-lab.de/consolving/config
+module github.com/consolving/config
 
 go 1.17
